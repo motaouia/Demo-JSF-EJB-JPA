@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:head>
+	<title>Hello World Jsf-Jpa-Ejb-Wildfly Tutorial</title>
+	<meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="bootstrap-4.0.0-dist/css/bootstrap.min.css"/>
+    <style type="text/css">
+        .updateBtnStyle {
+            width: 80px !important;         
+        }
+         .col-sm-updated {          
+            padding-top: 7px;           
+        }
+         .col-sm-updated a {
+            text-decoration: none !important;
+        }
+        .text-edit {
+            margin-left: 123px !important;
+            margin-top: 29px !important;
+        }
+    </style>
+</h:head>
+<h:body>
+ <center><h2><h:outputText value="Edit School Record"/></h2></center>
+        <h:form id="editSchoolForm" styleClass="form-horizontal">                        
+            <div class="form-group">
+                <h:outputLabel for="idLabel" styleClass="control-label col-sm-2">Id:</h:outputLabel>
+                <div class="col-sm-4"><h:inputText id="schoolId" value="#{schoolBean.editSchoolId}" p:readonly="readonly" styleClass="form-control" /></div>
+            </div>
+            <div class="form-group">
+                <h:outputLabel for="nameLabel" styleClass="control-label col-sm-2">New Name:</h:outputLabel>
+                <div class="col-sm-4"><h:inputText id="name" value="#{schoolBean.name}" styleClass="form-control" /></div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2" />
+                <div class="col-sm-4">
+                    <h:commandButton value="Update" action="#{schoolBean.updateSchoolDetails(schoolBean)}" styleClass="btn btn-primary updateBtnStyle" />
+                </div>
+                <div class="col-sm-1" />
+                <div class="col-sm-updated"><h:outputLink value="schoolsList.xhtml">View School Record List</h:outputLink></div>
+            </div>
+            <div class="text text-success text-edit"><h:message for="schoolId" /></div>
+        </h:form>
+         <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+</h:body>
+</html>
